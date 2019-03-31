@@ -1,7 +1,9 @@
 <template>
 <div class="col-sm-4 col-lg-4 col-md-4 item" :class="{'list-group-item': displayList}">
   <div class="thumbnail ">
-    <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image">
+    <router-link :to="'/product/' + item.id">
+      <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image">
+    </router-link>
     <div class="caption margin-left-sm">
       <h4 class="pull-right">${{ item.price }}</h4>
       <router-link :to="'/product/' + item.id" tag="h4"><a>{{ item.title }}</a></router-link>
